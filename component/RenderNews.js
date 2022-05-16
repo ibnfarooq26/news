@@ -17,7 +17,6 @@ function RenderNews({ route, navigation }) {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     let newsUrl = `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${API_KEY}`;
-    console.log(newsUrl);
     axios.get(newsUrl).then(({ data }) => {
       setArticles(data.articles);
     });
